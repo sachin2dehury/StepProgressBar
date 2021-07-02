@@ -23,5 +23,5 @@ class Segment {
     val progressPercentage: Float
         get() = animationProgress.toFloat() / 100
 
-    fun progress() = animationProgress++
+//    fun progress() = animationProgress++
 }

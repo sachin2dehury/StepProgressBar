@@ -48,9 +48,7 @@ class SegmentedProgressBar : View {
             }
         }
 
-    val callBack = CallBack()
-
-    var listener: SegmentedProgressBarListener? = null
+    private val callBack = CallBack()
 
     constructor(context: Context) : super(context)
 

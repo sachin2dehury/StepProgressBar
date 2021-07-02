@@ -10,26 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val items = listOf<Int>(1, 2, 3, 4, 5)
+        val items = listOf<Int>(1, 2, 3, 4, 5, 6)
 
         val spb = findViewById<SegmentedProgressBar>(R.id.spb)
         spb.viewPager = viewPager2
         viewPager2.adapter = PagerAdapter(items)
 
         spb.segmentCount = items.size
-        spb.listener = object : SegmentedProgressBarListener {
-            override fun onPage(oldPageIndex: Int, newPageIndex: Int) {
-                // New page started animating
-            }
-
-            override fun onFinished() {
-//                finish()
-            }
-        }
-
-//        spb.start()
-
-//        btnNext.setOnClickListener { spb.next() }
-//        btnPrevious.setOnClickListener { spb.previous() }
     }
 }
