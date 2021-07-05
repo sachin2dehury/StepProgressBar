@@ -2,20 +2,23 @@ package github.sachin2dehury.stepprogressbar
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.layout_pager.*
+import github.sachin2dehury.stepprogressbar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private var _binding: ActivityMainBinding? = null
+    private val binding: ActivityMainBinding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val items = listOf<Int>(1, 2, 3, 4, 5, 6)
 
-        val spb = findViewById<SegmentedProgressBar>(R.id.spb)
-        spb.viewPager = viewPager2
-        viewPager2.adapter = PagerAdapter(items)
+        binding.spb.viewPager = binding.viewPager2
+        binding.viewPager2.adapter = PagerAdapter(items)
 
-        spb.segmentCount = items.size
+        binding.spb.segmentCount = items.size
     }
 }

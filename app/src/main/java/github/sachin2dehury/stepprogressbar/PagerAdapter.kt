@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_page.view.*
+import github.sachin2dehury.stepprogressbar.databinding.FragmentPageBinding
 
 class PagerAdapter(private val items: List<Int>) :
     RecyclerView.Adapter<PagerAdapter.PageViewHolder>() {
@@ -19,7 +19,8 @@ class PagerAdapter(private val items: List<Int>) :
     }
 
     override fun onBindViewHolder(holder: PageViewHolder, position: Int) {
-        holder.itemView.textView.text = items[position].toString()
+        val binding = FragmentPageBinding.bind(holder.itemView)
+        binding.textView.text = items[position].toString()
     }
 
     override fun getItemCount(): Int = items.size

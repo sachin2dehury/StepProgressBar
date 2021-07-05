@@ -128,13 +128,10 @@ class SegmentedProgressBar : View {
         override fun onPageSelected(position: Int) {
             super.onPageSelected(position)
             invalidate()
-            Log.w("Test", position.toString())
             segments.mapIndexed { index, segment ->
                 if (index <= position) {
-                    Log.w("Test Index", index.toString())
                     segment.animationState = Segment.AnimationState.ANIMATED
                 } else {
-                    Log.w("Test Index Not", index.toString())
                     segment.animationState = Segment.AnimationState.IDLE
                 }
             }

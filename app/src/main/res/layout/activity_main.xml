@@ -5,17 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <include layout="@layout/layout_pager" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.viewpager2.widget.ViewPager2>
 
     <github.sachin2dehury.stepprogressbar.SegmentedProgressBar
         android:id="@+id/spb"
         android:layout_width="match_parent"
         android:layout_height="8dp"
-        android:layout_margin="8dp"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:segmentBackgroundColor="@android:color/holo_blue_bright"
         app:segmentCornerRadius="8dp"
